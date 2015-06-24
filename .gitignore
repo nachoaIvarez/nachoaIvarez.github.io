@@ -1,5 +1,5 @@
 node_modules
-jspm_packages
+src/jspm_packages
 test
 .sass-cache
 .tags
