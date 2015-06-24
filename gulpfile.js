@@ -70,7 +70,7 @@ gulp.task("lint", function() {
     .pipe(plugins.cached("js")) //Process only changed files
     .pipe(plugins.eslint())
     .pipe(plugins.eslint.format())
-    .pipe(plugins.eslint.failOnError())
+    .pipe(plugins.eslint.failOnError());
 });
 
 gulp.task("jspm", function() {
@@ -86,7 +86,14 @@ gulp.task("bundle", ["js", "jspm"], plugins.shell.task([
   "cd dist; jspm bundle js/main app.js"
 ]));
 
-
+gulp.task("html", function() {
+  var opts = {
+    conditionals: true
+  };
+  return gulp.src("src/**/*.html")
+    .pipe(plugins.minifyHtml(opts))
+    .pipe(gulp.dest("dist"));
+});
 
 // Uglify the bundle
 gulp.task("uglify", function() {
@@ -118,8 +125,9 @@ gulp.task("build", function() {
     "clean",
     "files",
     "sass",
-    ["css", "images", "bundle"],
+    ["css", "images", "html", "bundle"],
     "uglify",
     "gzip"
   );
+  return gulp.src("CNAME").pipe(gulp.dest("dist"));
 });
