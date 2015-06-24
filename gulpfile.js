@@ -38,9 +38,8 @@ gulp.task("sass", function() {
 
 // Copy files to "dist"
 gulp.task("files", function () {
-  return gulp.src(["src/*.*"], {dot: true}).pipe(gulp.dest("dist"));
+  return gulp.src(["src/*.*", "CNAME"], {dot: true}).pipe(gulp.dest("dist"));
 });
-
 
 // Delete dist Directory
 gulp.task("clean", require("del").bind(null, ["dist"]));
@@ -120,6 +119,12 @@ gulp.task("serve", ["browser-sync", "sass", "lint"], function() {
 // Default
 gulp.task("default", ["serve"]);
 
+gulp.task("push", function() {
+  return gulp.src("dist/**/*")
+    .pipe(plugins.ghPages({branch: "master"}));
+});
+
+
 gulp.task("build", function() {
   runSequence(
     "clean",
@@ -129,10 +134,16 @@ gulp.task("build", function() {
     "uglify",
     "gzip"
   );
-  return gulp.src("CNAME").pipe(gulp.dest("dist"));
 });
 
-gulp.task("deploy", ["build"], function() {
-  return gulp.src("dist/**/*")
-    .pipe(plugins.ghPages({branch: "master"}));
+gulp.task("deploy", function() {
+  runSequence(
+    "clean",
+    "files",
+    "sass",
+    ["css", "images", "html", "bundle"],
+    "uglify",
+    "gzip",
+    "push"
+  );
 });
