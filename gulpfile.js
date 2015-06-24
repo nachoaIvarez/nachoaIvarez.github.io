@@ -131,3 +131,8 @@ gulp.task("build", function() {
   );
   return gulp.src("CNAME").pipe(gulp.dest("dist"));
 });
+
+gulp.task("deploy", ["build"], function() {
+  return gulp.src("dist/**/*")
+    .pipe(plugins.ghPages({branch: "master"}));
+});
