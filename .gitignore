@@ -1,6 +1,5 @@
 node_modules
-dist
-.tmp
+jspm_packages
 .sass-cache
-bower_components
-test/bower_components
+.tags
+.tags1
