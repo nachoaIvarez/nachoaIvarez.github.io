@@ -1,17 +1,23 @@
+@import 'sections/helpers';
+@import 'sections/mixins';
+@import 'sections/variables';
+@import 'sections/reset';
+
 body {
-  background: #fafafa;
-  color: #333;
+  background: $white;
+  color: $dark-gray;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .hero-unit {
-  background-color: #eee;
-  border-radius: 6px;
-  font-size: 18px;
+  background-color: $light-orange;
+  border-radius: 2px;
+  color: $white;
+  font-size: 15px;
   font-weight: 200;
   line-height: 30px;
-  margin: 50px auto 0;
-  padding: 60px;
+  margin: 50px auto;
+  padding: 33px;
   width: 80vw;
 
   h1 {
@@ -22,8 +28,8 @@ body {
 }
 
 .browserupgrade {
-  background: #ccc;
-  color: #000;
+  background: $smoke;
+  color: $black;
   margin: .2em 0;
   padding: .2em 0;
   transform: scale(666);

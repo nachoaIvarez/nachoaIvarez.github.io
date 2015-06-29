@@ -1,26 +1,11 @@
+/*eslint-env node */
+
 "use strict";
 
 var gulp = require("gulp");
 var plugins = require("gulp-load-plugins")();
 var browserSync = require("browser-sync");
 var runSequence = require("run-sequence");
-
-// BrowserSync Server
-gulp.task("browser-sync", function() {
-  browserSync.init([
-    "src/css/*.css",
-    "src/js/**/*.js",
-    "src/**/*.html"
-  ], {
-    notify: false,
-    server: {
-      baseDir: ["src"]
-    },
-    port: 666,
-    browser: [],
-    tunnel: false
-  });
-});
 
 // SASS
 gulp.task("sass", function() {
@@ -33,16 +18,9 @@ gulp.task("sass", function() {
     .on("error", plugins.util.log)
     .pipe(plugins.sourcemaps.write("."))
     .pipe(gulp.dest("src/css"))
+    .pipe(browserSync.stream())
     .on("error", plugins.util.log);
 });
-
-// Copy files to "dist"
-gulp.task("files", function () {
-  return gulp.src(["src/*.*", "CNAME"], {dot: true}).pipe(gulp.dest("dist"));
-});
-
-// Delete dist Directory
-gulp.task("clean", require("del").bind(null, ["dist"]));
 
 // CSS
 gulp.task("css", function() {
@@ -71,6 +49,36 @@ gulp.task("lint", function() {
     .pipe(plugins.eslint.format())
     .pipe(plugins.eslint.failOnError());
 });
+
+// BrowserSync Server
+gulp.task("serve", ["sass", "lint"], function() {
+  browserSync.init([
+    "src/js/**/*.js",
+    "src/**/*.html"
+  ], {
+    notify: false,
+    server: {
+      baseDir: ["src"]
+    },
+    port: 3000,
+    browser: [],
+    tunnel: false
+  });
+
+  gulp.watch("src/scss/**/*.scss", ["sass"]);
+  gulp.watch("src/js/**/*.js", ["lint"]);
+});
+
+// Default
+gulp.task("default", ["serve"]);
+
+// Copy files to "dist"
+gulp.task("files", function () {
+  return gulp.src(["src/*.*", "CNAME"], {dot: true}).pipe(gulp.dest("dist"));
+});
+
+// Delete dist Directory
+gulp.task("clean", require("del").bind(null, ["dist"]));
 
 gulp.task("jspm", function() {
   return gulp.src("src/jspm_packages/**/*").pipe(gulp.dest("dist/jspm_packages"));
@@ -109,15 +117,6 @@ gulp.task("uglify", function() {
 gulp.task("gzip", function() {
   return gulp.src("dist/**/*").pipe(plugins.size({title: "build", gzip: true}));
 });
-
-// serve task
-gulp.task("serve", ["browser-sync", "sass", "lint"], function() {
-  gulp.watch("src/sass/**/*.scss", ["sass"]);
-  gulp.watch("src/js/**/*.js", ["lint"]);
-});
-
-// Default
-gulp.task("default", ["serve"]);
 
 gulp.task("push", function() {
   return gulp.src("dist/**/*")

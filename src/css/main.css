@@ -1,16 +1,184 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-overflow-scrolling: touch;
+  text-decoration: none; }
+
 body {
-  background: #fafafa;
-  color: #333;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  vertical-align: top; }
+
+.horizontal-center {
+  left: 50%;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  vertical-align: top; }
+
+.center {
+  left: 50%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  vertical-align: top; }
+
+.truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: white;
+  color: #4b4b4b;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 .hero-unit {
-  background-color: #eee;
-  border-radius: 6px;
-  font-size: 18px;
+  background-color: #ff5a42;
+  border-radius: 2px;
+  color: white;
+  font-size: 15px;
   font-weight: 200;
   line-height: 30px;
-  margin: 50px auto 0;
-  padding: 60px;
+  margin: 50px auto;
+  padding: 33px;
   width: 80vw; }
   .hero-unit h1 {
     font-size: 60px;
@@ -18,8 +186,8 @@ body {
     line-height: 1; }
 
 .browserupgrade {
-  background: #ccc;
-  color: #000;
+  background: #ededed;
+  color: black;
   margin: .2em 0;
   padding: .2em 0;
   -webkit-transform: scale(666);
