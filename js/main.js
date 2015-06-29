@@ -1,5 +1,5 @@
 "format es6";
 
-let ar = 666;
+let satan = 666;
 
-console.log(`${ar}`);
+console.log(`${satan}`);
