@@ -188,8 +188,8 @@ table {
 body {
   -webkit-animation: Gradient 20s ease infinite;
           animation: Gradient 20s ease infinite;
-  background: linear-gradient(33deg, #ff5a42, #54ffe4 88%, rgba(84, 255, 228, 0.666));
-  background-size: 400%;
+  background: linear-gradient(33deg, #ff4221, #ff5a42, #3fbfab, #54ffe4, rgba(84, 255, 228, 0.333));
+  background-size: 180%;
   color: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;

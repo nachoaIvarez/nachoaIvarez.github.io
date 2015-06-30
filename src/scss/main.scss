@@ -19,8 +19,8 @@
 
 body {
   animation: Gradient 20s ease infinite;
-  background: linear-gradient(33deg, $light-orange, $light-ocean 88%, rgba($light-ocean, .666));
-  background-size: 400%;
+  background: linear-gradient(33deg, $orange, $light-orange, $ocean, $light-ocean, rgba($light-ocean, .333));
+  background-size: 180%;
   color: $white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;
