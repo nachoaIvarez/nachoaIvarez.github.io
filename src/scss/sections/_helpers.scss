@@ -22,16 +22,18 @@ body {
 }
 
 .horizontal-center {
-  // In order to work, the component using this helper needs to have a display
-  // attribute (block, inline-block) and must be inside a component with a declared width.
+  display: inline-block;
   left: 50%;
+  margin: auto;
   position: relative;
   transform: translateX(-50%);
   vertical-align: top;
 }
 
 .center {
+  display: inline-block;
   left: 50%;
+  margin: auto;
   position: relative;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
