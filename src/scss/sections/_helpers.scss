@@ -12,7 +12,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.vertical-center {
+%vertical-center {
   // In order to work, the component using this helper needs to have a display
   // attribute (block, inline-block) and must be inside a component with a declared height.
   position: relative;
@@ -21,7 +21,7 @@ body {
   vertical-align: top;
 }
 
-.horizontal-center {
+%horizontal-center {
   display: inline-block;
   left: 50%;
   margin: auto;
@@ -30,7 +30,7 @@ body {
   vertical-align: top;
 }
 
-.center {
+%center {
   display: inline-block;
   left: 50%;
   margin: auto;

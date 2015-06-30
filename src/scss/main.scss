@@ -18,7 +18,7 @@
 }
 
 body {
-  animation: Gradient 20s ease infinite;
+  animation: Gradient 25s ease-in-out infinite;
   background: linear-gradient(33deg, $orange, $light-orange, $ocean, $light-ocean, rgba($light-ocean, .333));
   background-size: 180%;
   color: $white;
@@ -28,12 +28,16 @@ body {
 }
 
 main {
-  @extend .center;
+  @extend %center;
 
   h1 {
-    font-size: 10vw;
+    font-size: 9vw;
     letter-spacing: -1px;
     line-height: 1;
+
+    @media #{$mobile} {
+      font-size: 15vw;
+    }
   }
 
   h2 {
@@ -41,12 +45,20 @@ main {
     letter-spacing: -1px;
     line-height: 1;
     padding: 2vh 0;
+
+    @media #{$mobile} {
+      font-size: 6vw;
+    }
   }
 
   h3 {
     font-size: 3vw;
     letter-spacing: -1px;
     line-height: 1;
+
+    @media #{$mobile} {
+      font-size: 5vw;
+    }
   }
 }
 
