@@ -1,18 +1,11 @@
-@mixin animation($delay, $duration, $animation) {
-  animation-delay: $delay;
-  animation-duration: $duration;
-  animation-name: $animation;
-  animation-fill-mode: forwards;
-}
-
 @mixin black($opacity) {
   background-color: rgba(0, 0, 0, $opacity);
 }
 
 @mixin blur($px: 0) {
-  filter: blur(#{$px}px);
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'><feGaussianBlur stdDeviation=\'#{$px}\' /></filter></svg>#blur"); //scss-lint:disable DuplicateProperty
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='#{$px}'); //scss-lint:disable DuplicateProperty
+  filter: blur(#{$px}px);
 }
 
 @mixin mask($color, $opacity) {
