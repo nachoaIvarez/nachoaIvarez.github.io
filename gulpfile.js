@@ -77,6 +77,11 @@ gulp.task("files", function () {
   return gulp.src(["src/*.*", "CNAME"], {dot: true}).pipe(gulp.dest("dist"));
 });
 
+// Copy fonts to "dist"
+gulp.task("fonts", function () {
+  return gulp.src("src/fonts/*.*").pipe(gulp.dest("dist/fonts"));
+});
+
 // Delete dist Directory
 gulp.task("clean", require("del").bind(null, ["dist"]));
 
@@ -129,7 +134,7 @@ gulp.task("build", function() {
     "clean",
     "files",
     "sass",
-    ["css", "images", "html", "bundle"],
+    ["fonts", "css", "images", "html", "bundle"],
     "uglify",
     "gzip"
   );
@@ -140,7 +145,7 @@ gulp.task("deploy", function() {
     "clean",
     "files",
     "sass",
-    ["css", "images", "html", "bundle"],
+    ["fonts", "css", "images", "html", "bundle"],
     "uglify",
     "gzip",
     "push"

@@ -1,0 +1,55 @@
+@import 'sections/reset';
+@import 'sections/variables';
+@import 'sections/mixins';
+@import 'sections/helpers';
+@import 'sections/fonts';
+
+body {
+  font-family: $font;
+  font-feature-settings: 'onum';
+  font-size: 16px;
+  font-weight: $regular;
+  line-height: 1.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 4.5em;
+  font-weight: $bold;
+}
+
+h2 {
+  font-family: $condensed;
+  font-size: 4em;
+  font-weight: $regular;
+}
+
+h3 {
+  font-size: 2.6em;
+  font-weight: $light;
+}
+
+h4 {
+  font-size: 1.8em;
+  font-weight: $regular;
+}
+
+h5 {
+  font-family: $condensed;
+  font-size: 1.6em;
+  font-weight: $medium;
+  letter-spacing: 1px;
+}
+
+h6 {
+  font-size: 1.2em;
+  font-weight: $medium;
+}

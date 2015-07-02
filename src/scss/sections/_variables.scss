@@ -2,17 +2,26 @@ $mobile: 'only screen and (max-width: 950px)';
 
 $lighter-orange: rgb(255, 120, 100);
 $light-orange: rgb(255, 90, 66);
-$orange: rgb(255, 66, 33);
+$orange: rgb(255, 77, 44);
 $dark-orange: rgb(220, 50, 30);
 $darker-orange: rgb(200, 33, 27);
 
-$light-green: rgb(66, 255, 176);
+$light-magenta: rgb(210, 0, 170);
+$magenta: rgb(161, 0, 130);
+$dark-magenta: rgb(121, 0, 99);
+
+$light-green: rgb(66, 255, 166);
 $green: rgb(10, 178, 100);
 $dark-green: rgb(34, 133, 87);
 
-$light-ocean: rgb(84, 255, 228);
+$light-ocean: rgb(84, 255, 229);
 $ocean: rgb(63, 191, 171);
 $dark-ocean: rgb(21, 64, 57);
+
+$light-blue: rgb(94, 159, 255);
+$blue: rgb(65, 89, 218);
+$dark-blue: rgb(0, 35, 124);
+
 
 $white: rgb(255, 255, 255);
 $lighter-smoke: rgb(250, 250, 250);
@@ -26,3 +35,11 @@ $gray: rgb(100, 100, 100);
 $dark-gray: rgb(75, 75, 75);
 $darker-gray: rgb(50, 50, 50);
 $black: rgb(0, 0, 0);
+
+$light: 200;
+$regular: 400;
+$medium: 600;
+$bold: 900;
+
+$font: 'Amsi', Helvetica, Arial, sans-serif;
+$condensed: 'Amsi Cond', Helvetica, Arial, sans-serif;

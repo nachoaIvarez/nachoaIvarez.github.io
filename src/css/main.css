@@ -1,30 +1,3 @@
-* {
-  border: 0;
-  box-sizing: border-box;
-  outline: none;
-  -webkit-overflow-scrolling: touch;
-  text-decoration: none; }
-
-body {
-  font-smooth: always;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility; }
-
-main {
-  display: inline-block;
-  left: 50%;
-  margin: auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-  vertical-align: top; }
-
-.truncate-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -153,6 +126,111 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-overflow-scrolling: touch;
+  text-decoration: none; }
+
+body {
+  font-smooth: always;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+main {
+  display: inline-block;
+  left: 50%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  vertical-align: top; }
+
+.truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+@font-face {
+  font-family: 'Amsi';
+  src: url("../fonts/AmsiPro-XLight.eot");
+  src: url("../fonts/AmsiPro-XLight.eot?#iefix") format("embedded-opentype"), url("../fonts/AmsiPro-XLight.woff") format("woff"), url("../fonts/AmsiPro-XLight.ttf") format("truetype"), url("../fonts/AmsiPro-XLight.svg#bec3efbbb42244ee672584d20bdad667") format("svg");
+  font-style: normal;
+  font-weight: 200; }
+
+@font-face {
+  font-family: 'Amsi';
+  src: url("../fonts/AmsiPro-Light.eot");
+  src: url("../fonts/AmsiPro-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/AmsiPro-Light.woff") format("woff"), url("../fonts/AmsiPro-Light.ttf") format("truetype"), url("../fonts/AmsiPro-Light.svg#225685593974360fd31789211b230542") format("svg");
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Amsi';
+  src: url("../fonts/AmsiPro-SemiBold.eot");
+  src: url("../fonts/AmsiPro-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/AmsiPro-SemiBold.woff") format("woff"), url("../fonts/AmsiPro-SemiBold.ttf") format("truetype"), url("../fonts/AmsiPro-SemiBold.svg#be132d25b576fea7a35346d8ea9260c7") format("svg");
+  font-style: normal;
+  font-weight: 600; }
+
+@font-face {
+  font-family: 'Amsi';
+  src: url("../fonts/AmsiPro-Ultra.eot");
+  src: url("../fonts/AmsiPro-Ultra.eot?#iefix") format("embedded-opentype"), url("../fonts/AmsiPro-Ultra.woff") format("woff"), url("../fonts/AmsiPro-Ultra.ttf") format("truetype"), url("../fonts/AmsiPro-Ultra.svg#7e626b4e02e1dc6f0c4583f0b5fc8331") format("svg");
+  font-style: normal;
+  font-weight: 900; }
+
+@font-face {
+  font-family: 'Amsi Cond';
+  src: url("../fonts/AmsiProCond-Thin.eot");
+  src: url("../fonts/AmsiProCond-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/AmsiProCond-Thin.woff") format("woff"), url("../fonts/AmsiProCond-Thin.ttf") format("truetype"), url("../fonts/AmsiProCond-Thin.svg#13d29914c1203a9b8d6ffe5b9fff3688") format("svg");
+  font-style: normal;
+  font-weight: 200; }
+
+body {
+  font-family: "Amsi", Helvetica, Arial, sans-serif;
+  -webkit-font-feature-settings: 'onum';
+          font-feature-settings: 'onum';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2em; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em; }
+
+h1 {
+  font-size: 4.5em;
+  font-weight: 900; }
+
+h2 {
+  font-family: "Amsi Cond", Helvetica, Arial, sans-serif;
+  font-size: 4em;
+  font-weight: 400; }
+
+h3 {
+  font-size: 2.6em;
+  font-weight: 200; }
+
+h4 {
+  font-size: 1.8em;
+  font-weight: 400; }
+
+h5 {
+  font-family: "Amsi Cond", Helvetica, Arial, sans-serif;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: 1px; }
+
+h6 {
+  font-size: 1.2em;
+  font-weight: 600; }
+
 @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 100%; }
@@ -170,39 +248,14 @@ table {
     background-position: 0% 100%; } }
 
 body {
-  -webkit-animation: Gradient 25s ease-in-out infinite;
-          animation: Gradient 25s ease-in-out infinite;
-  background: linear-gradient(33deg, #ff4221, #ff5a42, #3fbfab, #54ffe4, rgba(84, 255, 228, 0.333));
+  -webkit-animation: Gradient 12s ease-in-out infinite;
+          animation: Gradient 12s ease-in-out infinite;
+  background: linear-gradient(33deg, #42ffa6, #5e9fff);
+  background: linear-gradient(33deg, #ff5a42 16%, #a10082);
   background-size: 180%;
   color: white;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;
   width: 100vw; }
-
-main h1 {
-  font-size: 9vw;
-  letter-spacing: -1px;
-  line-height: 1; }
-  @media only screen and (max-width: 950px) {
-    main h1 {
-      font-size: 15vw; } }
-
-main h2 {
-  font-size: 4vw;
-  letter-spacing: -1px;
-  line-height: 1;
-  padding: 2vh 0; }
-  @media only screen and (max-width: 950px) {
-    main h2 {
-      font-size: 6vw; } }
-
-main h3 {
-  font-size: 3vw;
-  letter-spacing: -1px;
-  line-height: 1; }
-  @media only screen and (max-width: 950px) {
-    main h3 {
-      font-size: 5vw; } }
 
 .browserupgrade {
   background: #ededed;

@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Amsi';
+  src: url('../fonts/AmsiPro-XLight.eot');
+  src: url('../fonts/AmsiPro-XLight.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AmsiPro-XLight.woff') format('woff'),
+       url('../fonts/AmsiPro-XLight.ttf')  format('truetype'),
+       url('../fonts/AmsiPro-XLight.svg#bec3efbbb42244ee672584d20bdad667') format('svg');
+
+  font-style: normal;
+  font-weight: $light;
+}
+
+@font-face {
+  font-family: 'Amsi';
+  src: url('../fonts/AmsiPro-Light.eot');
+  src: url('../fonts/AmsiPro-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AmsiPro-Light.woff') format('woff'),
+       url('../fonts/AmsiPro-Light.ttf')  format('truetype'),
+       url('../fonts/AmsiPro-Light.svg#225685593974360fd31789211b230542') format('svg');
+
+  font-style: normal;
+  font-weight: $regular;
+}
+
+@font-face {
+  font-family: 'Amsi';
+  src: url('../fonts/AmsiPro-SemiBold.eot');
+  src: url('../fonts/AmsiPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AmsiPro-SemiBold.woff') format('woff'),
+       url('../fonts/AmsiPro-SemiBold.ttf')  format('truetype'),
+       url('../fonts/AmsiPro-SemiBold.svg#be132d25b576fea7a35346d8ea9260c7') format('svg');
+
+  font-style: normal;
+  font-weight: $medium;
+}
+
+@font-face {
+  font-family: 'Amsi';
+  src: url('../fonts/AmsiPro-Ultra.eot');
+  src: url('../fonts/AmsiPro-Ultra.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AmsiPro-Ultra.woff') format('woff'),
+       url('../fonts/AmsiPro-Ultra.ttf')  format('truetype'),
+       url('../fonts/AmsiPro-Ultra.svg#7e626b4e02e1dc6f0c4583f0b5fc8331') format('svg');
+
+  font-style: normal;
+  font-weight: $bold;
+}
+
+@font-face {
+  font-family: 'Amsi Cond';
+  src: url('../fonts/AmsiProCond-Thin.eot');
+  src: url('../fonts/AmsiProCond-Thin.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AmsiProCond-Thin.woff') format('woff'),
+       url('../fonts/AmsiProCond-Thin.ttf')  format('truetype'),
+       url('../fonts/AmsiProCond-Thin.svg#13d29914c1203a9b8d6ffe5b9fff3688') format('svg');
+
+  font-style: normal;
+  font-weight: $light;
+}
