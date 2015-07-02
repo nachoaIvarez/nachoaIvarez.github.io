@@ -252,6 +252,7 @@ body {
           animation: Gradient 12s ease-in-out infinite;
   background: linear-gradient(33deg, #42ffa6, #5e9fff);
   background: linear-gradient(33deg, #ff5a42 16%, #a10082);
+  background: linear-gradient(33deg, #154039, #228557);
   background-size: 180%;
   color: white;
   height: 100vh;
