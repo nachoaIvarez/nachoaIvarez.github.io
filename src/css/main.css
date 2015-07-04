@@ -215,11 +215,11 @@ h2 {
 
 h3 {
   font-size: 2.6em;
-  font-weight: 200; }
+  font-weight: 600; }
 
 h4 {
   font-size: 1.8em;
-  font-weight: 400; }
+  font-weight: 200; }
 
 h5 {
   font-family: "Amsi Cond", Helvetica, Arial, sans-serif;
@@ -250,9 +250,8 @@ h6 {
 body {
   -webkit-animation: Gradient 12s ease-in-out infinite;
           animation: Gradient 12s ease-in-out infinite;
-  background: linear-gradient(33deg, #42ffa6, #5e9fff);
   background: linear-gradient(33deg, #ff5a42 16%, #a10082);
-  background: linear-gradient(33deg, #154039, #228557);
+  background: linear-gradient(33deg, #42ffa6, #54ffe5, #5e96ff);
   background-size: 180%;
   color: white;
   height: 100vh;
