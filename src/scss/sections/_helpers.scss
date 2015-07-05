@@ -40,7 +40,7 @@ body {
   vertical-align: top;
 }
 
-.truncate-text {
+%truncate-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
