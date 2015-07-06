@@ -16,32 +16,42 @@
 
 body {
   animation: Gradient 12s ease-in-out infinite;
-  // background: linear-gradient(33deg, $light-green, $light-ocean, $light-blue);
-  background: linear-gradient(33deg, $lighter-orange 16%, $magenta);
-  background-size: 150%;
+  // background:-image linear-gradient(33deg, $light-green, $light-ocean, $light-blue);
+  background-image: linear-gradient(33deg, $light-orange 16%, $magenta);
+  background-size: 180%;
   color: $white;
+  height: 100vh;
   overflow: hidden;
+  width: 100vw;
 }
 
+$offset: 66vh;
+
 nav {
-  display: block;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  height: $offset;
+  justify-content: center;
   position: absolute;
   text-align: center;
   width: 100vw;
   z-index: 1;
 
-  > a {
-    color: $white;
-    display: block;
-    font-family: $condensed;
-    font-size: 6vw;
-    font-weight: $light;
-    letter-spacing: 8px;
-    line-height: 1.2em;
-    text-transform: uppercase;
+  > div {
+    > a {
+      color: $white;
+      display: block;
+      font-family: $condensed;
+      font-size: 5vw;
+      font-weight: $light;
+      letter-spacing: 8px;
+      line-height: 1.2em;
+      text-transform: uppercase;
 
-    @media #{$mobile} {
-      font-size: 15vw;
+      @media #{$mobile} {
+        font-size: 15vw;
+      }
     }
   }
 }
@@ -49,19 +59,25 @@ nav {
 main {
   $distance: 2px;
   background-image: url('../foto.jpg');
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 2px;
   display: flex;
   height: calc(100vh - #{$distance * 2});
   margin: $distance;
-  overflow: hidden;
-  transition: all 666ms ease-in-out;
+  position: absolute;
+  transition: all 333ms ease-in-out;
   width: calc(100vw - #{$distance * 2});
   z-index: 666;
 
   &.active {
-    transform: perspective(666px) rotateX(-5deg) translateY(99vh);
+    filter: blur(5px);
+    transform: perspective(666px) rotateX(-3deg) translateY($offset) scale(.96);
+
+    @media #{$mobile} {
+      transform: perspective(666px) rotateX(-10deg) translateY($offset) scale(.96);
+    }
   }
 
   > section {
