@@ -1,5 +1,8 @@
 "format es6";
 
-let satan = 666;
+import $ from "jquery" ;
 
-console.log(`${satan}`);
+$("main").click(function() {
+  $(this).toggleClass("active");
+  $(this).siblings("nav").toggleClass("active");
+});

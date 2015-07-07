@@ -6,6 +6,7 @@ var gulp = require("gulp");
 var plugins = require("gulp-load-plugins")();
 var browserSync = require("browser-sync");
 var runSequence = require("run-sequence");
+var nunjucksRender = require("gulp-nunjucks-render");
 
 // SASS
 gulp.task("sass", function() {
@@ -50,11 +51,18 @@ gulp.task("lint", function() {
     .pipe(plugins.eslint.failOnError());
 });
 
+gulp.task("nunjucks", function () {
+  nunjucksRender.nunjucks.configure(["src/templates/"]);
+  return gulp.src("src/templates/index.html")
+    .pipe(nunjucksRender())
+    .pipe(gulp.dest("src"));
+});
+
 // BrowserSync Server
-gulp.task("serve", ["sass", "lint"], function() {
+gulp.task("serve", ["sass", "lint", "nunjucks"], function() {
   browserSync.init([
     "src/js/**/*.js",
-    "src/**/*.html"
+    "src/*.html"
   ], {
     notify: false,
     server: {
@@ -67,6 +75,7 @@ gulp.task("serve", ["sass", "lint"], function() {
 
   gulp.watch("src/scss/**/*.scss", ["sass"]);
   gulp.watch("src/js/**/*.js", ["lint"]);
+  gulp.watch("src/templates/**/*.html", ["nunjucks"]);
 });
 
 // Default
@@ -98,11 +107,11 @@ gulp.task("bundle", ["js", "jspm"], plugins.shell.task([
   "cd dist; jspm bundle js/main app.js"
 ]));
 
-gulp.task("html", function() {
+gulp.task("html", ["nunjucks"], function() {
   var opts = {
     conditionals: true
   };
-  return gulp.src("src/**/*.html")
+  return gulp.src("src/*.html")
     .pipe(plugins.minifyHtml(opts))
     .pipe(gulp.dest("dist"));
 });

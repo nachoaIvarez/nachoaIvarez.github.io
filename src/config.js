@@ -9,7 +9,8 @@ System.config({
   "paths": {
     "*": "*.js",
     "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "npm:*": "jspm_packages/npm/*.js",
+    "bower:*": "jspm_packages/bower/*.js"
   }
 });
 
@@ -29,7 +30,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:npm-zepto@1.1.7": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     }
   }
 });
-

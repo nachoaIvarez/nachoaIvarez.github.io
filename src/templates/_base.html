@@ -19,36 +19,8 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-<nav>
-  <div>
-    <a href="">Blog</a>
-    <a href="">Labs</a>
-    <a href="">Contact</a>
-    <div class="social">
-      <a href="http://github.com/nachoaIvarez" class="github">
-        <img src="images/github.svg" height="40vw" width="40vw"></img>
-      </a>
-      <a href="http://twitter.com/nachoaIvarez" class="twitter">
-        <img src="images/twitter.svg" height="40vw" width="40vw"></img>
-      </a>
-      <a href="mailto:ignacioalvarez92@gmail.com?subject=Hi!" class="mail">
-        <img src="images/mail.svg" height="40vw" width="40vw"></img>
-      </a>
-    </div>
-  </div>
-</nav>
-<main class="active">
-  <a id="menu"></a>
-  <section>
-    <img src="foto.jpg" height="100%" width="auto"/>
-    <h1>Hi</h1>
-  </section>
-  <section id="chat">
-    <h2>I'm Ignacio.</h2>
-  </section>
-</main>
-
+    {% block content %}
+    {% endblock %}
   </body>
   <script>
     System.import('js/main');

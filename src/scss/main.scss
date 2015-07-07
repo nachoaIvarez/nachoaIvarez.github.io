@@ -1,3 +1,4 @@
+// scss-lint:disable NestingDepth SelectorDepth
 @import 'sections/base';
 
 @keyframes Gradient {
@@ -14,29 +15,50 @@
   }
 }
 
+@keyframes Zoom {
+  0% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
 body {
   animation: Gradient 12s ease-in-out infinite;
   // background:-image linear-gradient(33deg, $light-green, $light-ocean, $light-blue);
-  background-image: linear-gradient(33deg, $light-orange 16%, $magenta);
+  background-image: linear-gradient(33deg, $dark-orange 16%, $light-magenta);
   background-size: 180%;
   color: $white;
   height: 100vh;
   overflow: hidden;
+  perspective: 666px;
   width: 100vw;
 }
 
 $offset: 66vh;
 
 nav {
-  align-content: center;
-  align-items: center;
+  @extend %center;
   display: flex;
+  filter: blur(3px);
   height: $offset;
-  justify-content: center;
   position: absolute;
   text-align: center;
+  transform: translateZ(-111px);
+  transition: all 300ms ease-in-out;
   width: 100vw;
   z-index: 1;
+
+  &.active {
+    filter: blur(0);
+    transform: none;
+  }
 
   > div {
     > a {
@@ -53,35 +75,144 @@ nav {
         font-size: 15vw;
       }
     }
+
+    .social {
+      $distance: 20px;
+      @extend %center;
+      display: flex;
+      padding: $distance 0 0 $distance;
+
+      a {
+        margin: 0 $distance $distance 0;
+        transition: all 200ms ease-in-out;
+
+        &.twitter {
+          left: 2px;
+          position: relative;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 }
 
 main {
   $distance: 2px;
-  background-image: url('../foto.jpg');
+  background: $white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 2px;
+  cursor: pointer;
   display: flex;
   height: calc(100vh - #{$distance * 2});
   margin: $distance;
+  overflow: hidden;
   position: absolute;
+  transform: perspective(666px) rotateX(-3deg) translateY($offset) scale(.96);
   transition: all 333ms ease-in-out;
   width: calc(100vw - #{$distance * 2});
   z-index: 666;
 
-  &.active {
-    filter: blur(5px);
-    transform: perspective(666px) rotateX(-3deg) translateY($offset) scale(.96);
+  @media #{$mobile} {
+    transform: perspective(666px) rotateX(-10deg) translateY($offset) scale(.96);
+  }
 
-    @media #{$mobile} {
-      transform: perspective(666px) rotateX(-10deg) translateY($offset) scale(.96);
-    }
+  &.active {
+    cursor: auto;
+    transform: none;
   }
 
   > section {
+    @extend %center;
+    display: flex;
     flex: 1;
+    padding: 10px;
+
+    &:first-of-type {
+      color: $light-magenta;
+      justify-content: flex-end;
+      overflow: hidden;
+      position: relative;
+
+      @media #{$mobile} {
+        flex: 4;
+      }
+
+      &::after {
+        @include mask($dark-magenta, .444);
+        z-index: 222;
+      }
+
+      img {
+        animation: Zoom 50s ease infinite;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+
+        @media #{$mobile} {
+          bottom: 0;
+          left: auto;
+          top: auto;
+          right: 0;
+        }
+      }
+    }
+
+    &:last-of-type {
+      background-color: $orange;
+      color: $white;
+      justify-content: flex-start;
+      z-index: 999;
+
+      @media #{$mobile} {
+        flex: 3;
+      }
+    }
+
+    h1 {
+      text-align: right;
+      z-index: 999;
+    }
+    h2 {
+      @media #{$mobile} {
+        font-size: 12vw;
+      }
+    }
+  }
+
+  a {
+    background: $white;
+    border: 1px solid $white;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 4px;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    width: 30px;
+    z-index: 1111;
+
+    &::after,
+    &::before {
+      background: $white;
+      border-radius: 2px;
+      content: '';
+      display: block;
+      height: 4px;
+      left: -1px;
+      position: relative;
+      top: -11px;
+      width: 30px;
+    }
+
+    &::after {
+      top: 5px;
+    }
   }
 }
 
