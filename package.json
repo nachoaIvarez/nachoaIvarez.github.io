@@ -31,7 +31,6 @@
     "gulp-useref": "^1.1.1",
     "gulp-util": "^3.0.2",
     "gulp-watch": "^3.0.0",
-    "jspm": "^0.15.6",
     "opn": "^1.0.1",
     "run-sequence": "^1.1.0"
   }

@@ -52,7 +52,7 @@ gulp.task("lint", function() {
 });
 
 gulp.task("nunjucks", function () {
-  nunjucksRender.nunjucks.configure(["src/templates/"]);
+  nunjucksRender.nunjucks.configure(["src/templates/", "src/images/svg"]);
   return gulp.src("src/templates/index.html")
     .pipe(nunjucksRender())
     .pipe(gulp.dest("src"));
