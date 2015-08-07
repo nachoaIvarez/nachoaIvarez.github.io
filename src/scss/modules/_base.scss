@@ -1,8 +1,9 @@
-@import 'sections/reset';
-@import 'sections/variables';
-@import 'sections/mixins';
-@import 'sections/helpers';
-@import 'sections/fonts';
+@import 'modules/reset';
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/helpers';
+@import 'modules/animations';
+@import 'modules/fonts';
 
 body {
   font-family: $font;
@@ -52,4 +53,11 @@ h5 {
 h6 {
   font-size: 1.2em;
   font-weight: $medium;
+}
+
+.browserupgrade {
+  background: $smoke;
+  color: $black;
+  margin: .2em 0;
+  padding: .2em 0;
 }

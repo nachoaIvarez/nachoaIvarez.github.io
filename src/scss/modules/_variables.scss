@@ -1,8 +1,8 @@
 $mobile: 'only screen and (max-width: 736px)';
 
-$lighter-orange: rgb(255, 120, 120);
-$light-orange: rgb(255, 99, 99);
-$orange: rgb(255, 77, 77);
+$lighter-orange: rgb(255, 130, 130);
+$light-orange: rgb(255, 102, 102);
+$orange: rgb(255, 90, 90);
 $dark-orange: rgb(220, 55, 55);
 $darker-orange: rgb(200, 33, 33);
 
@@ -10,7 +10,7 @@ $light-magenta: rgb(210, 0, 170);
 $magenta: rgb(161, 0, 130);
 $dark-magenta: rgb(121, 0, 99);
 
-$light-green: rgb(66, 255, 166);
+$light-green: rgb(66, 255, 0);
 $green: rgb(10, 178, 100);
 $dark-green: rgb(34, 133, 87);
 
@@ -42,3 +42,5 @@ $bold: 900;
 
 $font: 'Amsi', Helvetica, Arial, sans-serif;
 $condensed: 'Amsi Cond', Helvetica, Arial, sans-serif;
+
+$main-offset: 66vh;
