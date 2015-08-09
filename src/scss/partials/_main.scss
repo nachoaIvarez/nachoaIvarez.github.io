@@ -28,20 +28,13 @@ main {
   }
 
   > section {
-    @extend %center;
-    display: flex;
     flex: 1;
     padding: 10px;
 
     &:first-of-type {
       color: $light-magenta;
-      justify-content: flex-end;
       overflow: hidden;
       position: relative;
-
-      @media #{$mobile} {
-        flex: 4;
-      }
 
       &::after {
         @include mask($dark-magenta, .444);
@@ -65,14 +58,9 @@ main {
     }
 
     &:last-of-type {
-      background-color: $white;
-      color: $orange;
-      justify-content: flex-start;
+      color: $white;
+      background-color: $orange;
       z-index: 999;
-
-      @media #{$mobile} {
-        flex: 3;
-      }
     }
 
     h1 {
