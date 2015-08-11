@@ -14,7 +14,7 @@ main {
   overflow: hidden;
   position: absolute;
   transform: perspective(666px) rotateX(-2deg) translateY($main-offset) scale(.96);
-  transition: all 333ms ease-in-out;
+  transition: all 200ms ease-in-out;
   width: calc(100vw - #{$distance * 2});
   z-index: 666;
 
@@ -58,8 +58,8 @@ main {
     }
 
     &:last-of-type {
-      color: $white;
       background-color: $orange;
+      color: $white;
       z-index: 999;
     }
 

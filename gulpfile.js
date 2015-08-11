@@ -52,7 +52,7 @@ gulp.task("lint", function() {
 });
 
 gulp.task("nunjucks", function () {
-  nunjucksRender.nunjucks.configure(["src/templates/", "src/images/svg"]);
+  nunjucksRender.nunjucks.configure(["src/templates/", "src/images/svg/"]);
   return gulp.src("src/templates/index.html")
     .pipe(nunjucksRender())
     .pipe(gulp.dest("src"));
@@ -75,7 +75,7 @@ gulp.task("serve", ["sass", "lint", "nunjucks"], function() {
 
   gulp.watch("src/scss/**/*.scss", ["sass"]);
   gulp.watch("src/js/**/*.js", ["lint"]);
-  gulp.watch("src/templates/**/*.html", ["nunjucks"]);
+  gulp.watch(["src/templates/**/*.html", "src/images/svg/**/*.svg"], ["nunjucks"]);
 });
 
 // Default
