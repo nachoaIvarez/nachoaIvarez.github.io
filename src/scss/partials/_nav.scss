@@ -3,18 +3,17 @@
 nav {
   @extend %center;
   display: flex;
-  filter: blur(5px);
   height: $main-offset;
   position: absolute;
   text-align: center;
   transform: translateZ(-111px);
-  transition: all 222ms ease-out;
+  transition: transform 333ms $cubic-out;
   width: 100vw;
+  will-change: transform;
   z-index: 1;
 
   &.active {
-    filter: blur(0);
-    transform: none;
+    transform: translateZ(0);
   }
 
   > div {
@@ -28,7 +27,7 @@ nav {
       line-height: 1.2em;
       text-align: center;
       text-transform: uppercase;
-      transition: transform 200ms ease-out;
+      transition: transform 200ms $cubic-out;
 
       @media #{$mobile} {
         font-size: 8vh;
@@ -38,13 +37,16 @@ nav {
       &:hover {
         transform: scale(1.05);
 
-        &::after {
-          width: 100%;
+        span::after {
+          transform: translate3d(0, 0, 0);
         }
       }
 
       span {
+        display: inline-table;
+        overflow: hidden;
         position: relative;
+
         &::after {
           background-color: $white;
           bottom: 0;
@@ -52,14 +54,9 @@ nav {
           height: 1px;
           left: 0;
           position: absolute;
-          transition: width 200ms ease-out;
-          width: 0;
-        }
-
-        &:hover {
-          &::after {
-            width: 100%;
-          }
+          transform: translate3d(-100%, 0, 0);
+          transition: transform 200ms $cubic-out;
+          width: 100%;
         }
       }
     }
@@ -72,7 +69,7 @@ nav {
 
       a {
         margin: 0 $distance $distance 0;
-        transition: all 200ms ease-in-out;
+        transition: all 200ms $cubic-out;
 
         &.twitter {
           left: .3vh; // The offset is vertical since the size units are.
@@ -86,7 +83,7 @@ nav {
         }
 
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.0666);
         }
 
         svg {

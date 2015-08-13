@@ -44,3 +44,6 @@ $font: 'Amsi', Helvetica, Arial, sans-serif;
 $condensed: 'Amsi Cond', Helvetica, Arial, sans-serif;
 
 $main-offset: 66vh;
+
+$cubic-out: cubic-bezier(.22, .61, .36, 1);
+$cubic-in-out: cubic-bezier(.65, .05, .36, 1);

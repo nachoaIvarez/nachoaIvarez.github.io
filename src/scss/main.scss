@@ -4,7 +4,7 @@
 @import 'partials/main';
 
 body {
-  animation: background-translate 12s ease-in-out infinite;
+  animation: background-translate 12s linear infinite;
   background-image: linear-gradient(33deg, $orange, $light-orange, $light-magenta);
   background-size: 180%;
   color: $white;

@@ -13,9 +13,10 @@ main {
   margin: $distance;
   overflow: hidden;
   position: absolute;
-  transform: perspective(666px) rotateX(-2deg) translateY($main-offset) scale(.96);
-  transition: all 200ms ease-in-out;
+  transform: perspective(666px) rotateX(-1deg) translateY($main-offset) scale(.95);
+  transition: transform 300ms $cubic-out;
   width: calc(100vw - #{$distance * 2});
+  will-change: transform;
   z-index: 666;
 
   @media #{$mobile} {
@@ -24,15 +25,15 @@ main {
 
   &.active {
     cursor: auto;
-    transform: none;
+    transform: translateZ(0);
   }
 
   > section {
-    flex: 1;
     padding: 10px;
 
     &:first-of-type {
       color: $light-magenta;
+      flex: 3;
       overflow: hidden;
       position: relative;
 
@@ -42,7 +43,7 @@ main {
       }
 
       img {
-        animation: zoom 50s ease infinite;
+        animation: zoom 50s linear infinite;
         left: 0;
         position: absolute;
         top: 0;
@@ -58,8 +59,8 @@ main {
     }
 
     &:last-of-type {
-      background-color: $orange;
-      color: $white;
+      background-color: $white;
+      flex: 5;
       z-index: 999;
     }
 
@@ -76,8 +77,8 @@ main {
   }
 
   a {
-    background: $white;
-    border: 1px solid $white;
+    background: $orange;
+    border: 1px solid $orange;
     border-radius: 2px;
     cursor: pointer;
     height: 4px;
@@ -89,7 +90,7 @@ main {
 
     &::after,
     &::before {
-      background: $white;
+      background: $orange;
       border-radius: 2px;
       content: '';
       display: block;

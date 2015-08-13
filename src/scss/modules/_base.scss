@@ -6,6 +6,7 @@
 @import 'modules/fonts';
 
 body {
+  color: $dark-gray;
   font-family: $font;
   font-feature-settings: 'onum';
   font-size: 16px;
@@ -19,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2em;
+  line-height: 1.11em;
 }
 
 h1 {
