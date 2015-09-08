@@ -1,8 +1,19 @@
-"format es6";
+'format es6';
 
-import $ from "jquery" ;
+import { toggleClass, hasClass } from 'js/dom-helpers';
 
-$("main").click(function() {
-  $(this).toggleClass("active");
-  $(this).siblings("nav").toggleClass("active");
+const toggle = document.getElementById('menu');
+const main = document.getElementsByTagName('main')[0];
+const nav = document.getElementsByTagName('nav')[0];
+
+toggle.addEventListener('click', function() {
+  toggleClass(main, 'active');
+  toggleClass(nav, 'active');
+});
+
+main.addEventListener('click', function() {
+  if (!hasClass(main, 'active')) {
+    toggleClass(main, 'active');
+    toggleClass(nav, 'active');
+  }
 });

@@ -1,9 +1,7 @@
 {
   "jspm": {
     "directories": {},
-    "dependencies": {
-      "jquery": "github:components/jquery@^2.1.4"
-    },
+    "dependencies": {},
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
       "babel-runtime": "npm:babel-runtime@^5.1.13",
@@ -11,8 +9,9 @@
     }
   },
   "devDependencies": {
-    "babel-eslint": "^3.1.15",
+    "babel-eslint": "^3.1.30",
     "eslint": "^0.22.1",
+    "jspm": "^0.16.2",
     "jspm-bower-endpoint": "^0.3.2",
     "run-sequence": "^1.1.0"
   }
