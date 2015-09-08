@@ -2,12 +2,6 @@
   background-color: rgba(0, 0, 0, $opacity);
 }
 
-@mixin blur($px: 0) {
-  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'><feGaussianBlur stdDeviation=\'#{$px}\' /></filter></svg>#blur"); //scss-lint:disable DuplicateProperty
-  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='#{$px}'); //scss-lint:disable DuplicateProperty
-  filter: blur(#{$px}px);
-}
-
 @mixin mask($color, $opacity) {
   // In order to work, the component using this mixin must be inside a
   // component with position: relative.

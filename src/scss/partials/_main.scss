@@ -2,7 +2,7 @@
 
 main {
   $distance: 1px;
-  background: $white;
+  background-color: $white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,10 +11,11 @@ main {
   display: flex;
   height: calc(100vh - #{$distance * 2});
   margin: $distance;
+  opacity: .8;
   overflow: hidden;
   position: absolute;
   transform: perspective(666px) rotateX(-1deg) translateY($main-offset) scale(.95);
-  transition: transform 300ms $cubic-out;
+  transition: all 333ms $cubic-in-out;
   width: calc(100vw - #{$distance * 2});
   will-change: transform;
   z-index: 666;
@@ -25,11 +26,13 @@ main {
 
   &.active {
     cursor: auto;
+    opacity: 1;
     transform: translateZ(0);
   }
 
   > section {
     padding: 10px;
+    position: relative;
 
     &:first-of-type {
       color: $light-magenta;
@@ -38,12 +41,12 @@ main {
       position: relative;
 
       &::after {
-        @include mask($dark-magenta, .444);
+        @include mask($dark-orange, .222);
         z-index: 222;
       }
 
       img {
-        animation: zoom 50s linear infinite;
+        animation: zoom 66s ease-in-out infinite alternate;
         left: 0;
         position: absolute;
         top: 0;
@@ -59,50 +62,59 @@ main {
     }
 
     &:last-of-type {
+      align-items: left;
       background-color: $white;
+      display: flex;
       flex: 5;
+      flex-direction: column;
+      justify-content: center;
       z-index: 999;
     }
 
     h1 {
-      text-align: right;
+      display: block;
       z-index: 999;
     }
 
     h2 {
+      display: block;
       @media #{$mobile} {
         font-size: 12vw;
       }
     }
   }
 
-  a {
-    background: $orange;
-    border: 1px solid $orange;
-    border-radius: 2px;
+  figure {
     cursor: pointer;
-    height: 4px;
     position: absolute;
     right: 15px;
     top: 25px;
-    width: 30px;
-    z-index: 1111;
 
-    &::after,
-    &::before {
+    a {
       background: $orange;
+      border: 1px solid $orange;
       border-radius: 2px;
-      content: '';
       display: block;
-      height: 4px;
-      left: -1px;
-      position: relative;
-      top: -11px;
+      height: 3px;
       width: 30px;
-    }
+      z-index: 1111;
 
-    &::after {
-      top: 5px;
+      &::after,
+      &::before {
+        background: $orange;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        height: 3px;
+        left: -1px;
+        position: relative;
+        top: -10px;
+        width: 30px;
+      }
+
+      &::after {
+        top: 5px;
+      }
     }
   }
 }

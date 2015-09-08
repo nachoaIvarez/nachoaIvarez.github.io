@@ -1,0 +1,8 @@
+<svg>
+    <defs>
+        <linearGradient id="gradientName">
+            <stop offset="<%>" stop-color="<color>" />
+            <stop offset="<%>" stop-color="<color>" />
+        </linearGradient>
+    </defs>
+</svg>

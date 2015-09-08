@@ -7,7 +7,7 @@ nav {
   position: absolute;
   text-align: center;
   transform: translateZ(-111px);
-  transition: transform 333ms $cubic-out;
+  transition: transform 444ms $cubic-in-out;
   width: 100vw;
   will-change: transform;
   z-index: 1;
@@ -19,6 +19,7 @@ nav {
   > div {
     > a {
       color: $white;
+      cursor: pointer;
       display: block;
       font-family: $condensed;
       font-size: 8vh;
@@ -27,7 +28,7 @@ nav {
       line-height: 1.2em;
       text-align: center;
       text-transform: uppercase;
-      transition: transform 200ms $cubic-out;
+      transition: all 200ms $cubic-out;
 
       @media #{$mobile} {
         font-size: 8vh;
