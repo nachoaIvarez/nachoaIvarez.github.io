@@ -6,7 +6,8 @@ const toggle = document.getElementById('menu');
 const main = document.getElementsByTagName('main')[0];
 const nav = document.getElementsByTagName('nav')[0];
 
-toggle.addEventListener('click', function() {
+toggle.addEventListener('click', function(ev) {
+  ev.stopPropagation();
   toggleClass(main, 'active');
   toggleClass(nav, 'active');
 });
