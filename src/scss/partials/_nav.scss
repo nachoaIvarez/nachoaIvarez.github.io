@@ -54,6 +54,8 @@ nav {
         overflow: hidden;
         padding: $space $space 0 0;
         position: relative;
+        right: -$space;
+        top: -$space;
 
         &::before {
           background-color: $white;
@@ -64,7 +66,7 @@ nav {
           position: absolute;
           transform: translate3d(-100%, 0, 0);
           transition: transform 200ms $cubic-out;
-          width: calc(100% - #{$space * 1.2});
+          width: calc(100% - #{$space * 1.5});
         }
 
         &::after {

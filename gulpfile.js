@@ -157,6 +157,7 @@ gulp.task('deploy', function() {
     ['fonts', 'css', 'images', 'html', 'bundle'],
     'uglify',
     'gzip',
-    'push'
+    'push',
+    'clean'
   );
 });
