@@ -16,9 +16,9 @@ export function addClass(element, className) {
 
 export function hasClass(element, className) {
   if (element.classList) {
-    element.classList.contains(className);
+    return element.classList.contains(className);
   } else {
-    new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+    return new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
   }
 }
 
