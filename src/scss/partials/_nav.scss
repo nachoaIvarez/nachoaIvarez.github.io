@@ -26,6 +26,7 @@ nav {
       font-weight: $light;
       letter-spacing: .1em;
       line-height: 1.2em;
+      position: relative;
       text-align: center;
       text-transform: uppercase;
       transition: all 200ms $cubic-out;
@@ -38,17 +39,23 @@ nav {
       &:hover {
         transform: scale(1.05);
 
-        span::after {
+        span::before {
           transform: translate3d(0, 0, 0);
+        }
+
+        span::after {
+          transform: rotate(30deg) scale(1);
         }
       }
 
       span {
+        $space: 14px;
         display: inline-table;
         overflow: hidden;
+        padding: $space $space 0 0;
         position: relative;
 
-        &::after {
+        &::before {
           background-color: $white;
           bottom: 0;
           content: '';
@@ -57,7 +64,29 @@ nav {
           position: absolute;
           transform: translate3d(-100%, 0, 0);
           transition: transform 200ms $cubic-out;
-          width: 100%;
+          width: calc(100% - #{$space * 1.2});
+        }
+
+        &::after {
+          $size: 40px;
+          background-color: rgba($white, .9);
+          border-radius: 50%;
+          color: $light-orange;
+          content: 'Soon!';
+          display: block;
+          font-family: $font;
+          font-size: .666rem;
+          font-weight: $medium;
+          height: $size;
+          letter-spacing: normal;
+          line-height: $size;
+          position: absolute;
+          right: $space/3;
+          text-transform: capitalize;
+          top: $space/3;
+          transform: rotate(30deg) scale(0);
+          transition: transform 300ms $recoil;
+          width: $size;
         }
       }
     }
