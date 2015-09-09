@@ -54,8 +54,8 @@ nav {
         overflow: hidden;
         padding: $space $space 0 0;
         position: relative;
-        right: -$space;
-        top: -$space;
+        right: -$space/2;
+        top: -$space/2;
 
         &::before {
           background-color: $white;
