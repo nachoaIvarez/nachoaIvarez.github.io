@@ -45,7 +45,7 @@ main {
       }
 
       &::after {
-        @include mask($dark-orange, .222);
+        @include mask($blue, .26);
         z-index: 222;
       }
 
@@ -106,8 +106,8 @@ main {
     }
 
     a {
-      background: $orange;
-      border: 1px solid $orange;
+      background: $dark-blue;
+      border: 1px solid $dark-blue;
       border-radius: 2px;
       display: block;
       height: 3px;
@@ -116,7 +116,7 @@ main {
 
       &::after,
       &::before {
-        background: $orange;
+        background: $dark-blue;
         border-radius: 2px;
         content: '';
         display: block;

@@ -1,4 +1,5 @@
 // scss-lint:disable NestingDepth SelectorDepth
+$glow: 1px 1px 7px rgba(166, 166, 255, 1);
 
 nav {
   @extend %center;
@@ -40,7 +41,7 @@ nav {
         transform: scale(1.05);
 
         span::before {
-          transform: translate3d(0, 0, 0);
+          transform: scale(1);
         }
 
         span::after {
@@ -56,15 +57,17 @@ nav {
         position: relative;
         right: -$space/2;
         top: -$space/2;
+        text-shadow: $glow;
 
         &::before {
           background-color: $white;
           bottom: 0;
+          box-shadow: $glow;
           content: '';
           height: 1px;
           left: 0;
           position: absolute;
-          transform: translate3d(-100%, 0, 0);
+          transform: scale(0);
           transition: transform 200ms $cubic-out;
           width: calc(100% - #{$space * 1.5});
         }
@@ -73,7 +76,7 @@ nav {
           $size: 40px;
           background-color: rgba($white, .9);
           border-radius: 50%;
-          color: $light-orange;
+          color: $dark-blue;
           content: 'Soon!';
           display: block;
           font-family: $font;
@@ -119,6 +122,7 @@ nav {
         }
 
         svg {
+          filter: drop-shadow($glow);
           height: 6vh;
           width: 6vh;
 
